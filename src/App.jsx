@@ -1,19 +1,24 @@
 import "./App.css";
 
 function App() {
-  const condition = false;
+  const movies = ["lord of the rings", "the hobbit", "the lord of the rings"];
+
+  const HTMLmovies = movies.map((movie) => <li key={movie}>{movie}</li>);
 
   return (
     <>
-      <h1>Renderizado condicional</h1>
-      {condition && <h1>Esto es visible</h1>}
-      {!condition && <h1>Esto no es visible</h1>}
+      <h1>Renderizado de listas</h1>
+      <ul>{HTMLmovies}</ul>
 
+      <br />
+      <h1>otra forma</h1>
 
-      {/* {condition ? <h1>Esto es visible</h1> : <h1>Esto no es visible</h1>}
-     */}
-     
-     </>
+      <ul>
+        {movies.map((movie) => (
+          <li key={movie}>{movie}</li>
+        ))}
+      </ul>
+    </>
   );
 }
 
