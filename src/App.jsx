@@ -1,34 +1,17 @@
 import "./App.css";
+import { Child } from "./componens/Child";
 import { animals } from "./data/animals";
 
-const HTMLanimmals = animals.map((animal) => {
-  return (
-    <li key={animal.id}>
-      <img src={animal.img} alt={animal.name} width={200} />
-      <h3>{animal.name}</h3>
-    </li>
-  );
-});
-
 function App() {
+  const text = "Hello World";
+  const user = { name: "Juan", age: 25 };
   return (
     <>
-      <h1>Renderizado de listas de objetos</h1>
+      <h1>Props | Comunicasion entre componentes</h1>
 
-      <ul>{HTMLanimmals}</ul>
+      <Child msg={text} user={user} animals={animals} />
+      <br/>
 
-      <p>la otra forma seria</p>
-      <br />
-      <ul>
-        {animals.map((animal) => {
-          return (
-            <li key={animal.id}>
-              <img src={animal.img} alt={animal.name} width={200} />
-              <h3>{animal.name}</h3>
-            </li>
-          );
-        })}
-      </ul>
     </>
   );
 }
