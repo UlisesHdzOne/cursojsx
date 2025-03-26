@@ -1,33 +1,54 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({
+    userName: "",
+    password: "",
+  });
 
-  const getUsers = async () => {
-    const response = await axios.get(
-      "https://jsonplaceholder.typicode.com/users"
-    );
-    //const data = await response.json();
-    //setUsers(data);
-    setUsers(response.data);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(user);
+    console.log("enviado");
   };
 
-  useEffect(() => {
-    getUsers();
-  }, []);
+  const handleUserNameInput = (e) => {
+    setUser({ ...user, userName: e.target.value });
+  };
 
-  const HtmlUsers = users.map((user) => (
-    <li key={user.id}>
-      <h2>{user.name}</h2>
-      <p>{user.email}</p>
-    </li>
-  ));
+  const handlePasswordInput = (e) => {
+    setUser({ ...user, password: e.target.value });
+  };
 
   return (
-    <div>
-      <h1>axios | llamada a una API</h1>
-      <ul>{HtmlUsers}</ul>
+    <div onSubmit={handleSubmit}>
+      <h1>Formularios</h1>
+      <form>
+        <fieldset>
+          <label htmlFor="userName">Nombre</label>
+          <input
+            type="text"
+            id="userName"
+            onChange={handleUserNameInput}
+            value={user.userName}
+          />
+        </fieldset>
+
+        <fieldset>
+          <label htmlFor="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            onChange={handlePasswordInput}
+            value={user.password}
+          />
+        </fieldset>
+
+        <button>Enviar</button>
+      </form>
+      <button onClick={() => setUser({ userName: "", password: "" })}>
+        logout
+      </button>
     </div>
   );
 }
