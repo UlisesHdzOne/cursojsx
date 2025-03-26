@@ -1,10 +1,10 @@
-import { useState } from "react";
+//import { useState } from "react";
 
-export const Child = ({ handleLogin }) => {
-  const [userName, setUserName] = useState("ulises");
+export const Child = ({ handleLogin , userName}) => {
+ // const [userName, setUserName] = useState("ulises");
 
   const handleClick = () => {
-    handleLogin(userName);
+    handleLogin('uli');
   };
   return (
     <>
@@ -16,3 +16,5 @@ export const Child = ({ handleLogin }) => {
     </>
   );
 };
+
+

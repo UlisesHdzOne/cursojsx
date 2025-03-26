@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Child } from "./componens/Child";
+import { HelloUser } from "./componens/HelloUser";
 
 function App() {
   const [displayName, setDisplayName] = useState("");
@@ -10,9 +11,13 @@ function App() {
 
   return (
     <div>
-      <h1>props | comunicasion hijo a padre con funcion</h1>
+      <h1>State up | Conumincasion entre hermanos </h1>
+
       <h2>hola {displayName}</h2>
-      <Child handleLogin={login} />
+
+      <HelloUser userName={displayName}/>
+
+      <Child handleLogin={login} userName={displayName} />
     </div>
   );
 }
