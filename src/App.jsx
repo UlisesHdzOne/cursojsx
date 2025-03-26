@@ -1,23 +1,14 @@
 import { useState } from "react";
 import { Child } from "./componens/Child";
-import { HelloUser } from "./componens/HelloUser";
 
 function App() {
-  const [displayName, setDisplayName] = useState("");
-
-  const login = (name) => {
-    setDisplayName(name);
-  };
+  const [showChild, setShowChild] = useState(true);
 
   return (
     <div>
-      <h1>State up | Conumincasion entre hermanos </h1>
-
-      <h2>hola {displayName}</h2>
-
-      <HelloUser userName={displayName}/>
-
-      <Child handleLogin={login} userName={displayName} />
+      <h1>useEffect() | Ciclo de vida de componentes</h1>
+      <button onClick={() => setShowChild(!showChild)}>Tooggle Child</button>
+      {showChild && <Child />}
     </div>
   );
 }
