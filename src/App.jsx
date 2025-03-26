@@ -1,18 +1,21 @@
-import "./App.css";
-import { Child } from "./componens/Child";
-import { animals } from "./data/animals";
-
 function App() {
-  const text = "Hello World";
-  const user = { name: "Juan", age: 25 };
+ 
   return (
-    <>
-      <h1>Props | Comunicasion entre componentes</h1>
+    <div className="dark">
+     <h1>className - htmlFor - select defautValue</h1>
+     <form>
+      <label htmlFor="userName">User name</label>
+      <input type="text" id="userName" placeholder="User name" />
 
-      <Child msg={text} user={user} animals={animals} />
-      <br/>
-
-    </>
+      <br />
+'
+      <select defaultValue={'javascript'}>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+      </select>
+     </form>
+    </div>
   );
 }
 
