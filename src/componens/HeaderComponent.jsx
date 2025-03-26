@@ -8,10 +8,14 @@ function HeaderComponent() {
       <nav>
         <ul className="link-list">
           <li>
-            <Link className="link" to="/">Home</Link>
+            <Link className="link" to="/">
+              Home
+            </Link>
           </li>
           <li>
-            <Link className="link" to="/blog">Blog</Link>
+            <Link className="link" to="/blog">
+              Blog
+            </Link>
           </li>
         </ul>
       </nav>
