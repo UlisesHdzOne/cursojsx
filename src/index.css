@@ -1,4 +1,9 @@
 .dark {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
+}
+
+.child {
+  border: 2px solid red; /* Borde de 2px color rojo */
+  align-items: center;
 }

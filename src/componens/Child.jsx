@@ -1,18 +1,18 @@
-export const Child = ({ msg, user, animals }) => {
-  
-    return (
+import { useState } from "react";
+
+export const Child = ({ handleLogin }) => {
+  const [userName, setUserName] = useState("ulises");
+
+  const handleClick = () => {
+    handleLogin(userName);
+  };
+  return (
     <>
-      <div>Child</div>
-      {msg}
-      <br />
-      {user.name}
-      <br />
-      {animals.map((animal) => (
-        <div key={animal.id}>
-          <h4>{animal.name}</h4>
-          <img src={animal.img} alt={animal.name} width="150" />
-        </div>
-      ))}
+      <div className="child">
+        <div>Este es el componente hijo</div>
+        <p>nombre del usuario {userName}</p>
+        <button onClick={handleClick}>Login</button>
+      </div>
     </>
   );
 };

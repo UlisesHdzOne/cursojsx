@@ -1,20 +1,18 @@
-function App() {
- 
-  return (
-    <div className="dark">
-     <h1>className - htmlFor - select defautValue</h1>
-     <form>
-      <label htmlFor="userName">User name</label>
-      <input type="text" id="userName" placeholder="User name" />
+import { useState } from "react";
+import { Child } from "./componens/Child";
 
-      <br />
-'
-      <select defaultValue={'javascript'}>
-        <option value="html">HTML</option>
-        <option value="css">CSS</option>
-        <option value="javascript">JavaScript</option>
-      </select>
-     </form>
+function App() {
+  const [displayName, setDisplayName] = useState("");
+
+  const login = (name) => {
+    setDisplayName(name);
+  };
+
+  return (
+    <div>
+      <h1>props | comunicasion hijo a padre con funcion</h1>
+      <h2>hola {displayName}</h2>
+      <Child handleLogin={login} />
     </div>
   );
 }
