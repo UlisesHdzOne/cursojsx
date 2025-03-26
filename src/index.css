@@ -1,9 +1,9 @@
-.dark {
-  background-color: black;
-  color: white;
+body {
+  margin: 0;
 }
 
-.child {
-  border: 2px solid red; /* Borde de 2px color rojo */
-  align-items: center;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
