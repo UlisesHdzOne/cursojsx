@@ -1,12 +1,16 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
   const [users, setUsers] = useState([]);
 
   const getUsers = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const data = await response.json();
-    setUsers(data);
+    const response = await axios.get(
+      "https://jsonplaceholder.typicode.com/users"
+    );
+    //const data = await response.json();
+    //setUsers(data);
+    setUsers(response.data);
   };
 
   useEffect(() => {
@@ -22,7 +26,7 @@ function App() {
 
   return (
     <div>
-      <h1>fech() | llamada a una API</h1>
+      <h1>axios | llamada a una API</h1>
       <ul>{HtmlUsers}</ul>
     </div>
   );
