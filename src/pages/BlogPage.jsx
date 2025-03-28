@@ -1,26 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import HeaderComponent from "../componens/HeaderComponent";
 import { PostCard } from "../componens/PostCard";
+import { BlogContext } from "../contexts/blog.context";
 
 export const BlogPage = () => {
-  const [posts, setPosts] = useState([]);
-  const [error, setError] = useState(false);
 
-  const getPosts = async () => {
-    try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts"
-      );
-      if (!response.ok) throw new Error("Error al obtener el post");
-      const data = await response.json();
-      console.log(data);
-      setPosts(data);
-      setError(false);
-    } catch (error) {
-      console.error(error);
-      setError(true);
-    }
-  };
+const {posts, error, getPosts} = useContext(BlogContext);
 
   useEffect(() => {
     getPosts();
