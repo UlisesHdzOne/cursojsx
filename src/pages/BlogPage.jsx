@@ -2,10 +2,13 @@ import React, { useContext, useEffect } from "react";
 import HeaderComponent from "../componens/HeaderComponent";
 import { PostCard } from "../componens/PostCard";
 import { BlogContext } from "../contexts/blog.context";
+import { UserContext } from "../contexts/user.context";
 
 export const BlogPage = () => {
 
 const {posts, error, getPosts} = useContext(BlogContext);
+//const { login,logout} = useContext(UserContext);
+
 
   useEffect(() => {
     getPosts();
@@ -23,6 +26,16 @@ const {posts, error, getPosts} = useContext(BlogContext);
     <>
       <HeaderComponent />
       <div>BlogPage</div> 
+
+      {/*
+      este componente lo vamos a comentar solo fue para hacer la prueba que 
+      se renderizaba muchas veses sin usar useMemo en el PostCard 
+      */}
+      {/*       
+      <button onClick={() => login()}>Login</button>
+      <button onClick={() => logout()}>Logout</button> 
+      */}
+
       <section>
         {error ? (
           <h1>Error al obtener los posts</h1>

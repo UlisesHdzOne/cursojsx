@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-export const PostCard = ({ post }) => {
+import React from "react";
+//aqui usamos useMemo para evitar que se renderize el componente PostCard muchas veces
+export const PostCard = React.memo( ({ post }) => {
   return (
     <article>
       <h3>
@@ -8,4 +10,5 @@ export const PostCard = ({ post }) => {
       <p>{post.body}</p>
     </article>
   );
-};
+});
+
