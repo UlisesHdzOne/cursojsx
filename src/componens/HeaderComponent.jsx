@@ -7,7 +7,7 @@ function HeaderComponent() {
   const { user } = useContext(UserContext);
   return (
     <header className="header">
-      <h1 className="title">Welcome {user}</h1>
+      <h1 className="title">Welcome {user && <span>{user.name}</span>}</h1>
       <nav>
         <ul className="link-list">
           <li>
@@ -15,7 +15,7 @@ function HeaderComponent() {
               Home
             </Link>
           </li>
-          <li>
+          <li>  
             <Link className="link" to="/blog">
               Blog
             </Link>

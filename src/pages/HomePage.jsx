@@ -3,12 +3,21 @@ import HeaderComponent from "../componens/HeaderComponent";
 import { UserContext } from "../contexts/user.context";
 
 export const HomePage = () => {
-  const {user, setUser} = useContext(UserContext);
+  const {user, login,logout} = useContext(UserContext);
+
+
+
   return (
     <>
       <HeaderComponent />
       <div>HomePage</div>
-      <p>{user}</p>
+      {user && <span>{user.name}</span>}
+      {/* <p>{user}</p> */}
+
+      <button onClick={() => login()}>Login</button>
+      <button onClick={() => logout()}>Logout</button>
+
     </>
   );
 };
+ 
