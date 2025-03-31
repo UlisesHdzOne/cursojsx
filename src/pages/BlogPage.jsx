@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
-import HeaderComponent from "../componens/HeaderComponent";
-import { PostCard } from "../componens/PostCard";
+import HeaderComponent from "../components/HeaderComponent";
+import { PostCard } from "../components/PostCard";
 import { BlogContext } from "../contexts/blog.context";
-import { UserContext } from "../contexts/user.context";
+//import { UserContext } from "../contexts/user.context";
 
 export const BlogPage = () => {
 
@@ -47,4 +47,4 @@ const {posts, error, getPosts} = useContext(BlogContext);
       </section>
     </>
   );
-};
+}; 

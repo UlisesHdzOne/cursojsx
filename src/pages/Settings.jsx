@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import HeaderComponent from "../componens/HeaderComponent";
+import HeaderComponent from "../components/HeaderComponent";
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../contexts/user.context";
 
 export const Settings = () => {
-  const {user, setUser} = useContext(UserContext);
+  const {user} = useContext(UserContext);
 
     //const [hasAccess, setHasAccess] = useState(true)
 
